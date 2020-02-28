@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 19, 2019 8:56:45 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.Poeti" table="poeti" catalog="biblioteca" optimistic-lock="version">
+        <id name="idpoet" type="java.lang.Integer">
+            <column name="idpoet" />
+            <generator class="identity" />
+        </id>
+        <property name="nume" type="string">
+            <column name="Nume" length="45" />
+        </property>
+        <property name="prenume" type="string">
+            <column name="Prenume" length="45" />
+        </property>
+        <property name="nationalitate" type="string">
+            <column name="Nationalitate" length="45" />
+        </property>
+        <set name="volumpoeziis" table="volumpoezii" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idpoet" />
+            </key>
+            <one-to-many class="pojo.Volumpoezii" />
+        </set>
+    </class>
+</hibernate-mapping>
