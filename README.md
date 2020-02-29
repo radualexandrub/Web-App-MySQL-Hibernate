@@ -1,4 +1,4 @@
-# WebAPI-Hibernate
+# Web Application using MySQL + Hibernate
 Web application containing a database created in MySQL using Hibernate technology for interface.
 
 <b>NOTE: 
